@@ -1,0 +1,11 @@
+-- Representa uma lógica fictícia. Em ambiente real, isso seria feito por COBOL + DB2 + Saída Impressa.
+CREATE PROCEDURE PRC_GERAR_EXTRATO_PDF (
+    IN P_CONTA VARCHAR(20)
+)
+LANGUAGE SQL
+BEGIN
+    -- Geração do extrato seria delegada ao COBOL, mas você pode marcar em uma tabela que o extrato foi gerado.
+    INSERT INTO TB_EXTRATOS_GERADOS (CONTA, DATA_GERACAO, STATUS)
+    VALUES (P_CONTA, CURRENT_TIMESTAMP, 'GERADO');
+END
+
